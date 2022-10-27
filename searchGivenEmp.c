@@ -1,3 +1,8 @@
+/*
+1.	Explain a non-primitive data type used to store n elements. 
+Develop a C program to read N employee ids, and search for a given employee using employee id. 
+Print appropriate message.
+*/
 #include <stdio.h>
 
 struct Employee
