@@ -21,6 +21,10 @@ void input(int *arr, int m, int n)
     for (i = 0; i < m; i++)
         for (j = 0; j < n; j++)
             scanf("%d", ((arr + i * n) + j));
+          //scanf("%d", *((arr + i * n) + j)); --> There is no * here while input 
+          // since we have to it in the memory location
+          // while adding and printing we are accessing data at that memory location
+          // so we are using * there
 }
 
 void print(int *arr, int m, int n)
@@ -28,7 +32,8 @@ void print(int *arr, int m, int n)
     int i, j;
     for (i = 0; i < m; i++)
         for (j = 0; j < n; j++)
-            printf("%d ", *((arr + i * n) + j));
+            printf("%d ", *((arr + i * n) + j)); /* here we are using * 
+                                                 since we are accessing the data at the memory location */
 }
 
 void add(int *arr1, int *arr2, int *res, int m, int n)
