@@ -20,11 +20,8 @@ void input(int *arr, int m, int n)
     int i, j;
     for (i = 0; i < m; i++)
         for (j = 0; j < n; j++)
-            scanf("%d", ((arr + i * n) + j));
-          //scanf("%d", *((arr + i * n) + j)); --> There is no * here while input 
-          // since we have to it in the memory location
-          // while adding and printing we are accessing data at that memory location
-          // so we are using * there
+            scanf("%d", ((arr + i * n) + j));/* here we are using * ,
+                                                since we are accessing the data at the memory location */
 }
 
 void print(int *arr, int m, int n)
@@ -32,8 +29,9 @@ void print(int *arr, int m, int n)
     int i, j;
     for (i = 0; i < m; i++)
         for (j = 0; j < n; j++)
-            printf("%d ", *((arr + i * n) + j)); /* here we are using * 
-                                                 since we are accessing the data at the memory location */
+            printf("%d ", *((arr + i * n) + j));
+    
+    printf("\n");
 }
 
 void add(int *arr1, int *arr2, int *res, int m, int n)
@@ -70,6 +68,8 @@ int main()
     input((int *)A, r1, c1);
     printf("input matrice 2\n");
     input((int *)B, r1, c1);
+    //   ^^^^^^^^^^ this is how pass you 2d matrice in a funciton 
+    // whose size you don't know
 
 
     // printing the matrice  A and B
